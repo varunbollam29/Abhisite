@@ -47,15 +47,13 @@
                 </div>
                 <div class="hero-image">
                     <!-- Add your profile image here -->
-                    <img src="profile.png" alt="Abhishek Iyer" class="profile-image">
-                    <!-- If you don't have an image yet, uncomment the placeholder below -->
-                    <!--
-                    <div class="profile-placeholder">
+                    <img src="profile.png" alt="Abhishek Iyer" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <!-- Fallback if image fails to load -->
+                    <div class="profile-placeholder" style="display: none;">
                         <i class="fas fa-user-circle"></i>
-                        <p>Add Profile Image Here</p>
-                        <small>Replace this placeholder with your professional photo</small>
+                        <p>Image not loading</p>
+                        <small>Check: profile.png file exists</small>
                     </div>
-                    -->
                 </div>
             </div>
         </div>
