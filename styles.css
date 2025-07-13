@@ -198,6 +198,21 @@ body {
     align-items: center;
 }
 
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00d4ff;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+}
+
 .profile-placeholder {
     width: 300px;
     height: 300px;
