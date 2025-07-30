@@ -133,10 +133,7 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #ffffff, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
 }
 
 .hero-subtitle {
@@ -860,4 +857,60 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #0099cc;
+} 
+
+/* Hover Effect for Designations */
+.designation-hover {
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.designation-hover:hover {
+    color: #00d4ff;
+}
+
+.hover-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+    padding: 0;
+    margin-top: 0;
+}
+
+.timeline-content:hover .hover-details {
+    max-height: 500px;
+    opacity: 1;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+.hover-details ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.hover-details li {
+    padding: 0.5rem 0;
+    color: #cccccc;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.hover-details li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    font-weight: bold;
+}
+
+.hover-details .achievements {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 3px solid #00d4ff;
+    color: #cccccc;
+    font-size: 0.9rem;
 } 
