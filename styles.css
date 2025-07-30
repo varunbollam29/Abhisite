@@ -480,23 +480,39 @@ section {
     transition: all 0.3s ease;
 }
 
-.timeline-content::before {
-    content: '';
+/* Timeline Logo Styling */
+.timeline-logo {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: #00d4ff;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 2;
 }
 
-.timeline-item:nth-child(odd) .timeline-content::before {
+.timeline-item:nth-child(odd) .timeline-logo {
     right: -60px;
 }
 
-.timeline-item:nth-child(even) .timeline-content::before {
+.timeline-item:nth-child(even) .timeline-logo {
     left: -60px;
+}
+
+.timeline-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00d4ff;
+    background: #ffffff;
+}
+
+.logo-fallback {
+    width: 100%;
+    height: 100%;
+    background: #00d4ff;
+    border-radius: 50%;
+    display: none;
 }
 
 .timeline-content:hover {
@@ -527,19 +543,29 @@ section {
     font-size: 0.9rem;
 }
 
-.timeline-content ul {
+/* Hide timeline details by default - only show on hover */
+.timeline-content ul:not(.hover-details ul) {
+    display: none;
+}
+
+.timeline-content .achievements:not(.hover-details .achievements) {
+    display: none;
+}
+
+/* Keep the hover-details styles for when they should be visible */
+.hover-details ul {
     list-style: none;
     margin-bottom: 1rem;
 }
 
-.timeline-content li {
+.hover-details li {
     padding: 0.5rem 0;
     color: #cccccc;
     position: relative;
     padding-left: 1.5rem;
 }
 
-.timeline-content li::before {
+.hover-details li::before {
     content: '•';
     position: absolute;
     left: 0;
@@ -547,7 +573,7 @@ section {
     font-weight: bold;
 }
 
-.achievements {
+.hover-details .achievements {
     background: rgba(0, 212, 255, 0.1);
     padding: 1rem;
     border-radius: 8px;
